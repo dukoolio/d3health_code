@@ -1,0 +1,3 @@
+# Module codeathon
+# RPC service class, partial path of RPC policy file
+com.d3health.client.GreetingService, A2330D2B32628A8CB488BDED1D67B594.gwt.rpc
