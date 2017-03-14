@@ -1,36 +1,29 @@
+# truffle-init-webpack
+Example webpack project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
 
+## Usage
 
-Ethereum Dev Setup Used the Reference - Truffle and testrpc
-https://medium.com/zeppelin-blog/the-hitchhikers-guide-to-smart-contracts-in-ethereum-848f08001f05#.vn0hqtpcd
+To initialize a project with this exapmple, run `truffle init webpack` inside an empty directory.
 
-Google Cloud via Marketplace
-curl https://sdk.cloud.google.com | bash
-brew install maven
+## Building and the frontend
 
-https://start.spring.io/
-created Project
-Installed Spring Tool Suite
+1. First run `truffle compile`, then run `truffle migrate` to deploy the contracts onto your network of choice (default "development").
+1. Then run `npm run dev` to build the app and serve it on http://localhost:8080
 
+## Possible upgrades
 
-Took Template from here:
-https://colorlib.com/wp/free-html5-admin-dashboard-templates/
-GIT: https://github.com/puikinsh/Bootstrap-Admin-Template
+* Use the webpack hotloader to sense when contracts or javascript have been recompiled and rebuild the application. Contributions welcome!
 
-My Setup
-++++++++++++++++++++++++++++++++++++
-Java 1.8.121
-Google App Engine in Eclipse
+## Common Errors
 
-Eclipse Standard/SDK
-Version: Kepler Service Release 2
-Build id: 20140224-0627
-++++++++++++++++++++++++++++++++++++
+* **Error: Can't resolve '../build/contracts/MetaCoin.json'**
 
+This means you haven't compiled or migrated your contracts yet. Run `truffle compile` and `truffle migrate` first.
 
-Pages:
-Console -  http://localhost:8888/_ah/admin
-Hello World WS - http://127.0.0.1:8888/resources/d3healthapi/helloworld
-Login - http://127.0.0.1:8888/public/login.html
+Full error:
 
-GWT page - http://127.0.0.1:8888/Codeathon.html
-Build - http://127.0.0.1:9876/recompile/codeathon?_callback=cback&user.agent=safari,gecko1_8,ie8,ie9,ie10
+```
+ERROR in ./app/main.js
+Module not found: Error: Can't resolve '../build/contracts/MetaCoin.json' in '/Users/tim/Documents/workspace/Consensys/test3/app'
+ @ ./app/main.js 11:16-59
+```
