@@ -36,27 +36,6 @@ Handle Sign in Functionality
     <!-- animate.css stylesheet -->
     <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
 
-    <!-- app specific javascript -->
-
-    <!-- app specific javascript
-    <script type="text/javascript" src="../src/js/core/jquery-core.js">
-
-    <script type="text/javascript" src="../src/js/core/jquery-ui-core.js">
-    <script type="text/javascript" src="assets/js/jquery-core.js">
-    <script type="text/javascript" src="assets/js/jquery-ui-core.js"></script>
-    <script type="text/javascript" src="assets/js/jquery-ui-widget.js"></script>
-    <script type="text/javascript" src="assets/js/jquery-ui-mouse.js"></script>
-    <script type="text/javascript" src="assets/js/jquery-ui-position.js"></script>
-    <script type="text/javascript" src="assets/js/transition.js"></script>
-    <script type="text/javascript" src="assets/js/modernizr.js"></script>
-    <script type="text/javascript" src="assets/js/jquery-cookie.js"></script>
-    <script type="text/javascript" src="assets/js/d3javascript/login.js">
--->
-<!-- JS Core -->
-
-
-
-
 </head>
 
 <body class="login">
@@ -89,8 +68,8 @@ Handle Sign in Functionality
                     <p class="text-muted text-center">
                         Enter your username and password
                     </p>
-                    <input type="text" placeholder="Username" class="form-control top">
-                    <input type="password" placeholder="Password" class="form-control bottom">
+                    <input id="loginName" type="text" placeholder="Username" class="form-control top">
+                    <input id="loginPwd" type="password" placeholder="Password" class="form-control bottom">
                     <div class="checkbox">
     		            </div>
                     <button id="loginBtn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
@@ -111,6 +90,8 @@ Handle Sign in Functionality
     <!--Bootstrap -->
     <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
 
+    <!-- D3 Login -->
+    <!-- <script src="assets/lib/d3-health/js/login.js"></script> -->
 
     <script type="text/javascript">
         (function($) {
@@ -130,10 +111,23 @@ Handle Sign in Functionality
           if (e.preventDefault) e.preventDefault();
 
           /* do what you want with the form */
-          alert('Need to add logic here');
-          //Modal if Patient is new, to enter in info
-          //Handle Patient Flow
-          window.location.replace("d3-patient-details.html");
+          //
+          //Add Username via Session Key
+          var name = document.getElementById('loginName').value;
+
+
+          //TODO AUthenticate via D3 Services
+          //var pwd = document.getElementById('loginName');
+
+          //Handle Provider Flow
+          if(name!=null && name.length){
+            alert('Hello: ' + name);
+            localStorage.setItem("username", name);
+            window.location.replace("d3-patient-data-sharing.html");
+          }
+          else{
+            alert('no name entered');
+          }
           //Handle EHR Flow
 
           //Handle Payer-Healthplan flow
@@ -145,9 +139,12 @@ Handle Sign in Functionality
         var form = document.getElementById('login-form');
         if (form.attachEvent) {
             form.attachEvent("submit", processForm);
+
         } else {
             form.addEventListener("submit", processForm);
+
         }
+
     </script>
 </body>
 
