@@ -1,0 +1,175 @@
+<!-- TODO
+Handle Sign in Functionality
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Login Page</title>
+
+    <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
+    <meta name="author" content="">
+
+    <meta name="msapplication-TileColor" content="#5bc0de" />
+    <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/lib/cloudflare/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!-- Metis core stylesheet -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- metisMenu stylesheet -->
+    <link rel="stylesheet" href="assets/lib/metismenu/metisMenu.css">
+
+    <!-- animate.css stylesheet -->
+    <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
+
+
+</head>
+
+<body class="login">
+<table >
+  <tr>
+    <td  width="70%">
+      <div class="text-center">
+        <h1 class="text-primary">Digitally Democratized Data (D3)</h1>
+        <div width="300px" >
+          <h2 class="text-warning" >
+          D3 Health enables the exchange of Healthcare <br/>
+          data assets and incentivizes stakeholders to <br/>
+          shift the paradigm from closed to open.
+         </h2>
+        </div>
+
+      </div>
+    </td>
+    <td>
+      <div class="form-signin" >
+        <div class="text-center">
+            <!-- <img src="assets/img/logo.png" alt="Metis Logo"> -->
+            D3 Health
+        </div>
+        <hr>
+        <div class="tab-content">
+            <div id="login" class="tab-pane active">
+                <form id="login-form" action="index.html" >
+                    <p class="text-muted text-center">
+                        Enter your username and password
+                    </p>
+                    <input id="loginName" type="text" placeholder="Username" class="form-control top">
+                    <input id="loginPwd" type="password" placeholder="Password" class="form-control bottom">
+                    <div class="checkbox">
+    		            </div>
+                    <button id="loginBtn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+    <!--jQuery -->
+    <script src="assets/lib/jquery/jquery.js"></script>
+
+    <!--Bootstrap -->
+    <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Truffle BC integration -->
+    <script type="text/javascript">
+
+          (function($) {
+            $(document).ready(function() {
+              console.log('test1');
+              "use strict";
+              Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylesheets_app_css__ = __webpack_require__(54);
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylesheets_app_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__stylesheets_app_css__);
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3__ = __webpack_require__(40);
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_web3__);
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_truffle_contract__ = __webpack_require__(55);
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_truffle_contract__);
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json__ = __webpack_require__(53);
+              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json__);
+
+              // MetaCoin is our usable abstraction, which we'll use through the code below.
+              var MetaCoin = __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default()(__WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json___default.a);
+              console.log('test2');
+              var MetaCoin = MetaCoin.deployed();
+              console.log(MetaCoin.deployed());
+            });
+        })(jQuery);
+    </script>
+    <!-- D3 Login -->
+    <script type="text/javascript">
+
+        (function($) {
+            $(document).ready(function() {
+                $('.list-inline li > a').click(function() {
+                    var activeForm = $(this).attr('href') + ' > form';
+                    //console.log(activeForm);
+                    $(activeForm).addClass('animated fadeIn');
+                    //set timer to 1 seconds, after that, unload the animate animation
+                    setTimeout(function() {
+                        $(activeForm).removeClass('animated fadeIn');
+                    }, 1000);
+                });
+            });
+        })(jQuery);
+        function processForm(e) {
+          if (e.preventDefault) e.preventDefault();
+
+          /* do what you want with the form */
+          //
+          //Add Username via Session Key
+          var name = document.getElementById('loginName').value;
+
+
+          //TODO AUthenticate via D3 Services
+          //var pwd = document.getElementById('loginName');
+
+          //Handle Provider Flow
+          if(name!=null && name.length){
+            alert('Hello: ' + name);
+            localStorage.setItem("username", name);
+            window.location.replace("d3-patient-data-sharing.html");
+          }
+          else{
+            alert('no name entered');
+          }
+          //Handle EHR Flow
+
+          //Handle Payer-Healthplan flow
+
+          // You must return false to prevent the default form behavior
+          //return false;
+        }
+
+        var form = document.getElementById('login-form');
+        if (form.attachEvent) {
+            form.attachEvent("submit", processForm);
+
+        } else {
+            form.addEventListener("submit", processForm);
+
+        }
+
+    </script>
+</body>
+
+</html>
