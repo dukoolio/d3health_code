@@ -93,9 +93,6 @@ Handle Sign in Functionality
     <!-- D3 Health integration -->
     <!-- <script src="assets/js/d3Health.js"></script> -->
 
-    <!-- blockchain integration via Truffle -->
-    <!-- <script src="./app.js"></script> -->
-
     <!-- D3 Login -->
     <script type="text/javascript">
 
@@ -115,14 +112,6 @@ Handle Sign in Functionality
         function processForm(e) {
           if (e.preventDefault) e.preventDefault();
 
-          // alert('test 1');
-          // var input = false;
-          // App.setGeneralInfo(input);
-          // console.log('input:'+ input);
-          // var output = App.getGeneralInfo();
-          // console.log('output:'+ output);
-          // alert('test 2');
-
           /* do what you want with the form */
           //
           //Add Username via Session Key
@@ -133,16 +122,11 @@ Handle Sign in Functionality
           if(name!=null && name.length>0){
             //VerifyAccount and
             //Look up Addresses via D3 API
-            localStorage.setItem("username", name);
-            localStorage.setItem('pcpAddress', '0x7b85c50f068dd33564e85e3379bedfacfc76df4a');
-            localStorage.setItem('specialistAddress', '0xc9816790b0fc121b43c6a650faaaef62b298874e');
-            
-            if(name.toLowerCase().includes('pcp')){
-              window.location.replace("d3-patient-data-sharing.html");
-            }
-            else{
-                window.location.replace("d3-contract-search.html");
-            }
+            localStorage.setItem('ProviderAddress', '0x7b85c50f068dd33564e85e3379bedfacfc76df4a');
+            localStorage.setItem('ConsumerAddress', '0xc9816790b0fc121b43c6a650faaaef62b298874e');
+
+
+            window.location.replace("d3-patient-data-sharing.html");
           }
           else{
             alert('no name entered');

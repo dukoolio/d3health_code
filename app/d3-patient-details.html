@@ -11,9 +11,9 @@
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Patient Data</title>
+    <title>My Details</title>
 
-    <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
+    <meta name="description" content="D3 Health Patient Details">
     <meta name="author" content="">
 
     <meta name="msapplication-TileColor" content="#5bc0de" />
@@ -46,13 +46,6 @@
     <link rel="stylesheet" href="assets/lib/cloudflare/bootstrap-colorpicker.min.css">
     <link rel="stylesheet" href="assets/lib/cloudflare/bootstrap-datetimepicker.min.css">
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
     <!--For Development Only. Not required -->
     <script>
         less = {
@@ -61,18 +54,13 @@
             rootpath: "/assets/"
         };
     </script>
-
     <link rel="stylesheet" href="assets/css/style-switcher.css">
     <link rel="stylesheet/less" type="text/css" href="assets/less/theme.less">
     <script src="assets/lib/cloudflare/js/less.js"></script>
 
-    <!-- Truffle -->
-    <script src="./app.js"></script>
-
-</head>
   </head>
 
-        <body class="test">
+        <body class="  ">
             <div class="bg-dark dk" id="wrap">
                 <div id="top">
                     <!-- .navbar -->
@@ -97,7 +85,7 @@
 
                             <div class="topnav">
                                 <div class="btn-group">
-                                    <a href="d3-login.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
+                                    <a href="login.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
                                        class="btn btn-metis-1 btn-sm">
                                         <i class="fa fa-power-off"></i>
                                     </a>
@@ -123,7 +111,7 @@
                             <div class="main-bar">
                                 <h3>
               <i class="fa fa-pencil"></i>&nbsp;
-            Physician View
+            Patient View
           </h3>
                             </div>
                             <!-- /.main-bar -->
@@ -138,19 +126,15 @@
                             </div>
                             <div class="user-wrapper bg-dark">
                                 <a class="user-link" href="">
-                                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/patient.png">
-
+                                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/patient.jpg">
+                                    <span class="label label-danger user-label">16</span>
                                 </a>
 
                                 <div class="media-body">
-                                    <h5 id="username-top-right" class="media-heading">Kyle Culver</h5>
+                                    <h5 class="media-heading">Kyle Culver</h5>
                                     <ul class="list-unstyled user-info">
                                         <li>Last Access : <br>
-                                            <small><i id="last-access-top-right" class="fa fa-calendar"></i>&nbsp;15 Mar 11:00</small>
-                                        </li>
-                                        <li>
-                                          <h5 id="balance-top-right" class="media-heading"></h5>
-                                          <h5>Balance <span >$<span style="color: white" id="balance"></span> USD</span></h5>
+                                            <small><i class="fa fa-calendar"></i>&nbsp;15 Mar 11:00</small>
                                         </li>
                                     </ul>
                                 </div>
@@ -161,7 +145,7 @@
                                   <li class="nav-header">Menu</li>
                                   <li class="nav-divider"></li>
                                   <li class="">
-                                    <a href="dashboard.html">
+                                    <a href="d3-login.html">
                                       <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Dashboard</span>
                                     </a>
                                   </li>
@@ -223,7 +207,7 @@
                                     </ul>
                                   </li>
                                   <li class="">
-                                    <a href="javascript:;">
+                                    <a href="d3-patient-data-sharing.html">
                                       <i class="fa fa-exchange"></i>
                                       <span class="link-title">
                                     Data Sharing
@@ -232,16 +216,16 @@
                                     </a>
                                     <ul class="collapse">
                                       <li>
-                                        <a href="form-general.html">
-                                          <i class="fa fa-angle-right"></i>&nbsp; Get Patient Data </a>
+                                        <a href="d3-patient-data-sharing.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Get My Data </a>
                                       </li>
                                       <li>
-                                        <a href="form-general.html">
-                                          <i class="fa fa-angle-right"></i>&nbsp; Manage Patient Consent </a>
+                                        <a href="d3-patient-data-sharing.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Manage Access </a>
                                       </li>
                                         <li>
-                                        <a href="form-validation.html">
-                                          <i class="fa fa-angle-right"></i>&nbsp; Manage Contracts </a>
+                                        <a href="d3-patient-data-sharing.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; View History </a>
                                       </li>
                                     </ul>
                                   </li>
@@ -283,12 +267,12 @@
                     <div class="outer">
                         <div class="inner bg-light lter">
 <!--BEGIN General FIELDS-->
-<div class="row" style="padding: 8px;">
-<div >
+<div class="row">
+<div class="col-lg-6">
     <div class="box dark">
         <header>
             <div class="icons"><i class="fa fa-edit"></i></div>
-            <h5>Get Patient Data</h5>
+            <h5>General</h5>
             <!-- .toolbar -->
             <div class="toolbar">
               <nav style="padding: 8px;">
@@ -305,298 +289,15 @@
             </div>            <!-- /.toolbar -->
         </header>
         <div id="div-1" class="body">
-            <form class="form-horizontal" id="get-my-data-form">
+            <form class="form-horizontal">
 
               <div class="form-group">
-                <table>
-                      <tr>
-                        <td style="padding: 5px ">
-                          &nbsp&nbsp
-                          Select Patient
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <select class="form-control">
-                            <option value="fe428454-0921-11e7-93ae-92361f002671">Michael Bluth</option>
-                            <option value="fe4287d8-0921-12e7-93ae-92361f002671">Barry Zuckerkorn</option>
-                            <option value="fe4287ae-0921-13e7-93ae-92361f002671">Lucille Austero </option>
-                            <option value="fe428b5c-0921-14e7-93ae-92361f002671">Ann Veal </option>
-                            <option value="fe428d0a-0921-15e7-93ae-92361f002671">Steve Holt</option>
-                            <option value="fe428eae-0921-16e7-93ae-92361f002671">Kitty Sanchez</option>
-                            <option value="fe4293d6-0921-17e7-93ae-92361f002671">Stan Sitwell</option>
-                          </select>
-                        </td>
-                      </tr>
-                      <tr style="background-color:#F0F8FF;">
-                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
-                          &nbsp&nbsp
-                          Types of Data
-                          &nbsp&nbsp
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          General Information - Name, Phone, Gender etc.
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input id="generalGetSlider" class="make-switch" type="checkbox" data-label-text="General" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Allergies - Drugs, Latex, Foods, etc.
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Allergies" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Medications - Prescribed, Over the counter
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Medications" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Conditions - Diabetes, CHF,  etc.
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Conditions" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Family History - Parents, Siblings, etc.
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Family History" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Observations - Physician notes, Tests, Labs
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Observations" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Reports
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Reports" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Immunizations
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Immunizations" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Device Data -  Medical Devices, Fitbit, Scale,
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Device Data" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Care Plans -  Actions Suggested by Dr.
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Care Plans" checked enabled><br>
-                        </td>
-
-                      </tr>
-                      <tr style="background-color:#F0F8FF;">
-                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
-                          &nbsp&nbsp
-                          Configuration
-                          &nbsp&nbsp
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 5px ">
-                          &nbsp&nbsp
-                          Format/Spec
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <select class="form-control">
-                            <option value="1">FHIR</option>
-                            <option value="2">HL7</option>
-                            <option value="3">CCDA</option>
-                          </select>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 5px ">
-                          &nbsp&nbsp
-                          Validator To Use
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <select class="form-control">
-                            <option value="1">D3 Physician Friendly</option>
-                            <option value="2">Clincial Analytics</option>
-                            <option value="3">HLI - Wolters Kluwer</option>
-                          </select>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 5px ">
-                          &nbsp&nbsp
-                          Source Credibility
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <select class="form-control">
-                            <option value="1">Limit to my trusted relationships</option>
-                            <option value="2">Only Sources with High Network Trust</option>
-                            <option value="2">Not Limited</option>
-                          </select>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 5px ">
-                          &nbsp&nbsp
-                          Value of Data Asset (USD)
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                            <input type="text" name="valueOfDataAsset" placeholder="Current Market value $20" size="25">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 5px ">
-                          &nbsp&nbsp
-                          Expiration Date (Month/Day/Year)
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px; ">
-                          <div class="col-lg-5">
-                              <div class="input-group">
-                                  <input class="form-control"  type="text" data-mask="99/99/9999">
-
-                              </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr style="background-color:#F0F8FF;">
-                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
-                          &nbsp&nbsp
-                          Data Quality
-                          &nbsp&nbsp
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 5px ">
-                          &nbsp&nbsp
-                          Timeliness (less than)
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <select class="form-control">
-                            <option value="1">One Day (24 hours)</option>
-                            <option value="2">Week</option>
-                            <option value="3">30 days</option>
-                            <option value="4">60 days</option>
-                            <option value="5">90 days</option>
-                            <option value="6">6 Months</option>
-                            <option value="7">12 Months</option>
-                            <option value="8">24 Months</option>
-                            <option value="9">5 Years</option>
-                            <option value="10">10 Years</option>
-                            <option value="11">Not Applicable</option>
-                          </select>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Completeness (e.g. Required Fields)
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Completeness" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Consistency (e.g. Sig Codes, Drug Names, )
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Consistency" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Accuracy Guaranteed by Source (Incorrect data) )
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Accuracy" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Validity Guaranteed by Source (i.e. uncalibrated device)
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Validity" checked enabled><br>
-                        </td>
-                      </tr>
-                      <tr style="background-color:#F0F8FF;">
-                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
-                          &nbsp&nbsp
-                          Patient Consent
-                          &nbsp&nbsp
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          &nbsp&nbsp
-                          Patient Consent To Share
-                          &nbsp&nbsp
-                        </td>
-                        <td style="padding: 5px ">
-                          <input class="make-switch" type="checkbox" data-label-text="Consent" checked disabled><br>
-                        </td>
-                      </tr>
-                  </table
-
+                  <label class="control-label col-lg-3">Date of Birth</label>
+                  <div class="col-lg-5">
+                      <div class="input-group">
+                          <input class="form-control" type="text" data-mask="99/99/9999">
+                          <span class="input-group-addon">month/day/year, example: 1/31/2017</span>
+                      </div>
                   </div>
               </div><!-- /.Date Of Birth -->
                 <!--
@@ -605,8 +306,6 @@
                 Marital Status, Preferred Language, Race, Birth Sex, -->
 
                 <!-- /.form-group -->
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Update</button>
-                <span id="status"></span>
             </form>  <!-- /.General -->
         </div>
     </div>
@@ -615,12 +314,12 @@
 <!--END General FIELD-->
 
 <!--BEGIN Allergies FIELDS-->
-<div class="row" style="padding: 8px;">
-<div >
+<div class="row">
+<div class="col-lg-6">
     <div class="box dark">
         <header>
             <div class="icons"><i class="fa fa-edit"></i></div>
-            <h5>Manage Patient Consent</h5>
+            <h5>Allergies</h5>
             <!-- .toolbar -->
             <div class="toolbar">
               <nav style="padding: 8px;">
@@ -638,7 +337,7 @@
         </header>
         <div id="div-1" class="body">
             <form class="form-horizontal">
-
+                Allergies here
             </form>  <!-- /.Allergies -->
         </div>
     </div>
@@ -647,12 +346,12 @@
 <!--END Allergies FIELD-->
 
 <!--BEGIN Medications FIELDS-->
-<div class="row" style="padding: 8px;">
-<div>
+<div class="row">
+<div class="col-lg-6">
     <div class="box dark">
         <header>
             <div class="icons"><i class="fa fa-edit"></i></div>
-            <h5>Manage Contracts</h5>
+            <h5>Medications</h5>
             <!-- .toolbar -->
             <div class="toolbar">
               <nav style="padding: 8px;">
@@ -670,7 +369,7 @@
         </header>
         <div id="div-1" class="body">
             <form class="form-horizontal">
-
+                Medications here
             </form>  <!-- /.Allergies -->
         </div>
     </div>
@@ -678,8 +377,104 @@
 </div>
 <!--END Medications FIELD-->
 
+<!--BEGIN Conditions FIELDS-->
+<div class="row">
+<div class="col-lg-6">
+    <div class="box dark">
+        <header>
+            <div class="icons"><i class="fa fa-edit"></i></div>
+            <h5>Conditions</h5>
+            <!-- .toolbar -->
+            <div class="toolbar">
+              <nav style="padding: 8px;">
+                  <a href="javascript:;" class="btn btn-default btn-xs collapse-box" >
+                      <i class="fa fa-minus"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                      <i class="fa fa-expand"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                      <i class="fa fa-times"></i>
+                  </a>
+              </nav>
+            </div>            <!-- /.toolbar -->
+        </header>
+        <div id="div-1" class="body">
+            <form class="form-horizontal">
+                Conditions here
+            </form>  <!-- /.Conditions -->
+        </div>
+    </div>
+</div>
+</div>
+<!--END Conditions FIELD-->
 
-<!--END DATA SHARING FIELD-->
+
+<!--BEGIN Family History FIELDS-->
+<div class="row">
+<div class="col-lg-6">
+    <div class="box dark">
+        <header>
+            <div class="icons"><i class="fa fa-edit"></i></div>
+            <h5>Family History</h5>
+            <!-- .toolbar -->
+            <div class="toolbar">
+              <nav style="padding: 8px;">
+                  <a href="javascript:;" class="btn btn-default btn-xs collapse-box" >
+                      <i class="fa fa-minus"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                      <i class="fa fa-expand"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                      <i class="fa fa-times"></i>
+                  </a>
+              </nav>
+            </div>            <!-- /.toolbar -->
+        </header>
+        <div id="div-1" class="body">
+            <form class="form-horizontal">
+                Family History here
+            </form>  <!-- /.Conditions -->
+        </div>
+    </div>
+</div>
+</div>
+<!--END Family History FIELD-->
+
+<!--BEGIN Observations FIELDS-->
+<div class="row">
+<div class="col-lg-6">
+    <div class="box dark">
+        <header>
+            <div class="icons"><i class="fa fa-edit"></i></div>
+            <h5>Observations</h5>
+            <!-- .toolbar -->
+            <div class="toolbar">
+              <nav style="padding: 8px;">
+                  <a href="javascript:;" class="btn btn-default btn-xs collapse-box" >
+                      <i class="fa fa-minus"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                      <i class="fa fa-expand"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                      <i class="fa fa-times"></i>
+                  </a>
+              </nav>
+            </div>            <!-- /.toolbar -->
+        </header>
+        <div id="div-1" class="body">
+            <form class="form-horizontal">
+                Observations here
+            </form>  <!-- /.Observations -->
+        </div>
+    </div>
+</div>
+</div>
+<!--END Observations FIELD-->
+
+<!--END MY DETAILS FIELD-->
                         </div>
                         <!-- /.inner -->
                     </div>
@@ -811,36 +606,6 @@
                     });
                 </script>
 
-            <!-- Handle Events -->
-            <script>
-            window.onload = function(e) {
-               console.log("window loaded");
-               var vUser = localStorage.getItem("username");
-               var username_element = document.getElementById("username-top-right");
-               username_element.innerHTML = "Hello "+vUser.valueOf();
-               console.log("Username:"+vUser + " Authenticated");
-
-              var vProviderAddress = localStorage.getItem("ProviderAddress");
-              console.log('Blockchain Address for '+name+' Set to '+ vProviderAddress);
-
-               //console.log("OnLoad Complete!")
-
-
-           };
-
-            $( "#get-my-data-form" ).submit(function( event ) {
-              //alert( "Handler for .submit() called." );
-
-              //localStorage.setItem('contractGas');
-              var amount = document.getElementsByName("valueOfDataAsset")[0].value;//valueOfDataAsset
-              localStorage.setItem('valueOfDataAsset',amount);
-
-              App.d3HealthContract();
-              console.log('Request for Data Asset written to Blockchain');
-
-              event.preventDefault();
-            });
-            </script>
             <script src="assets/js/style-switcher.js"></script>
         </body>
 
