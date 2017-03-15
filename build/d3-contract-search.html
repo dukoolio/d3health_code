@@ -78,9 +78,17 @@
         var r =
           confirm("You are about to share:\n\n" + dataToShare +
             "\n\n" +
-            "You will receive " + value + " for this transaction.");
+            "You will receive $" + value + " for this transaction.");
         if (r) {
+          localStorage.setItem('reverseTransaction', 1)
+          localStorage.setItem('valueOfDataAsset', value);
+
+          console.log("Sharing confirmed, fulfilling contract.");
+
+          var transId = App.d3HealthContract();
           document.getElementById("d3sharingTable").deleteRow(row);
+
+          console.log("\t$" + value + " received.");
         }
       }
       function getContract(contractId) {
@@ -222,7 +230,7 @@
                             <div class="main-bar">
                                 <h3>
               <i class="fa fa-pencil"></i>&nbsp;
-            Patient View
+            Physician View
           </h3>
                             </div>
                             <!-- /.main-bar -->
@@ -417,6 +425,10 @@
               <div class="form-group">
 
                   <div id="sortableTable" class="body collapse in">
+                    <div style="text-align:center">
+                        <span id="status"></span>
+                    </div>
+
                     <table class="table table-bordered sortableTable responsive-table" id="d3sharingTable">
                       <thead>
                         <tr>
@@ -456,9 +468,9 @@
                           <td>1 year&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
                           <td>FHIR&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
                           <td><i class="glyphicon glyphicon-ok green-icon"></i></td>
-                          <td>$121.61</td>
+                          <td>$20.00</td>
                           <td>
-                            <button type="button" class="btn btn-sm btn-success" onclick="approveSharing(1,'','$121.61')">Approve</button>
+                            <button type="button" class="btn btn-sm btn-success" onclick="approveSharing(1,'',20)">Approve</button>
                             <button type="button" class="btn btn-sm btn-warning">Deny</button>
                           </td>
                         </tr>
@@ -665,7 +677,7 @@
                 </div>
                 <!-- /.modal-dialog -->
             </div>
-            <span id="status"></span>
+
             <!-- /.modal -->
             <!-- /#helpModal -->
             <!--jQuery -->
