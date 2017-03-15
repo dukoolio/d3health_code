@@ -61,12 +61,15 @@
             rootpath: "/assets/"
         };
     </script>
+
     <link rel="stylesheet" href="assets/css/style-switcher.css">
     <link rel="stylesheet/less" type="text/css" href="assets/less/theme.less">
     <script src="assets/lib/cloudflare/js/less.js"></script>
 
     <!-- Truffle -->
     <script src="./app.js"></script>
+
+</head>
   </head>
 
         <body class="test">
@@ -120,7 +123,7 @@
                             <div class="main-bar">
                                 <h3>
               <i class="fa fa-pencil"></i>&nbsp;
-            Patient View
+            Physician View
           </h3>
                             </div>
                             <!-- /.main-bar -->
@@ -136,7 +139,7 @@
                             <div class="user-wrapper bg-dark">
                                 <a class="user-link" href="">
                                     <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/patient.jpg">
-                                    <span class="label label-danger user-label">16</span>
+
                                 </a>
 
                                 <div class="media-body">
@@ -147,7 +150,7 @@
                                         </li>
                                         <li>
                                           <h5 id="balance-top-right" class="media-heading"></h5>
-                                          <h5>Balance <span ><span style="color: white" id="balance"></span> D3C</span></h5>
+                                          <h5>Balance <span >$<span style="color: white" id="balance"></span> USD</span></h5>
                                         </li>
                                     </ul>
                                 </div>
@@ -230,15 +233,15 @@
                                     <ul class="collapse">
                                       <li>
                                         <a href="form-general.html">
-                                          <i class="fa fa-angle-right"></i>&nbsp; Get My Data </a>
+                                          <i class="fa fa-angle-right"></i>&nbsp; Get Patient Data </a>
                                       </li>
                                       <li>
                                         <a href="form-general.html">
-                                          <i class="fa fa-angle-right"></i>&nbsp; Manage Access </a>
+                                          <i class="fa fa-angle-right"></i>&nbsp; Manage Patient Consent </a>
                                       </li>
                                         <li>
                                         <a href="form-validation.html">
-                                          <i class="fa fa-angle-right"></i>&nbsp; View History </a>
+                                          <i class="fa fa-angle-right"></i>&nbsp; Manage Contracts </a>
                                       </li>
                                     </ul>
                                   </li>
@@ -280,12 +283,12 @@
                     <div class="outer">
                         <div class="inner bg-light lter">
 <!--BEGIN General FIELDS-->
-<div class="row">
+<div class="row" style="padding: 8px;">
 <div >
     <div class="box dark">
         <header>
             <div class="icons"><i class="fa fa-edit"></i></div>
-            <h5>Get My Data</h5>
+            <h5>Get Patient Data</h5>
             <!-- .toolbar -->
             <div class="toolbar">
               <nav style="padding: 8px;">
@@ -307,12 +310,37 @@
               <div class="form-group">
                 <table>
                       <tr>
+                        <td style="padding: 5px ">
+                          &nbsp&nbsp
+                          Select Patient
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <select class="form-control">
+                            <option value="fe428454-0921-11e7-93ae-92361f002671">Michael Bluth</option>
+                            <option value="fe4287d8-0921-12e7-93ae-92361f002671">Barry Zuckerkorn</option>
+                            <option value="fe4287ae-0921-13e7-93ae-92361f002671">Lucille Austero </option>
+                            <option value="fe428b5c-0921-14e7-93ae-92361f002671">Ann Veal </option>
+                            <option value="fe428d0a-0921-15e7-93ae-92361f002671">Steve Holt</option>
+                            <option value="fe428eae-0921-16e7-93ae-92361f002671">Kitty Sanchez</option>
+                            <option value="fe4293d6-0921-17e7-93ae-92361f002671">Stan Sitwell</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr style="background-color:#F0F8FF;">
+                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
+                          &nbsp&nbsp
+                          Types of Data
+                          &nbsp&nbsp
+                        </td>
+                      </tr>
+                      <tr>
                         <td>
                           &nbsp&nbsp
                           General Information - Name, Phone, Gender etc.
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input id="generalGetSlider" class="make-switch" type="checkbox" data-label-text="General" checked enabled><br>
                         </td>
                       </tr>
@@ -322,7 +350,7 @@
                           Allergies - Drugs, Latex, Foods, etc.
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Allergies" checked enabled><br>
                         </td>
                       </tr>
@@ -332,7 +360,7 @@
                           Medications - Prescribed, Over the counter
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Medications" checked enabled><br>
                         </td>
                       </tr>
@@ -342,7 +370,7 @@
                           Conditions - Diabetes, CHF,  etc.
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Conditions" checked enabled><br>
                         </td>
                       </tr>
@@ -352,7 +380,7 @@
                           Family History - Parents, Siblings, etc.
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Family History" checked enabled><br>
                         </td>
                       </tr>
@@ -362,7 +390,7 @@
                           Observations - Physician notes, Tests, Labs
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Observations" checked enabled><br>
                         </td>
                       </tr>
@@ -372,7 +400,7 @@
                           Reports
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Reports" checked enabled><br>
                         </td>
                       </tr>
@@ -382,7 +410,7 @@
                           Immunizations
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Immunizations" checked enabled><br>
                         </td>
                       </tr>
@@ -392,7 +420,7 @@
                           Device Data -  Medical Devices, Fitbit, Scale,
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Device Data" checked enabled><br>
                         </td>
                       </tr>
@@ -402,15 +430,172 @@
                           Care Plans -  Actions Suggested by Dr.
                           &nbsp&nbsp
                         </td>
-                        <td>
+                        <td style="padding: 5px ">
                           <input class="make-switch" type="checkbox" data-label-text="Care Plans" checked enabled><br>
                         </td>
 
                       </tr>
+                      <tr style="background-color:#F0F8FF;">
+                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
+                          &nbsp&nbsp
+                          Configuration
+                          &nbsp&nbsp
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px ">
+                          &nbsp&nbsp
+                          Format/Spec
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <select class="form-control">
+                            <option value="1">FHIR</option>
+                            <option value="2">HL7</option>
+                            <option value="3">CCDA</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px ">
+                          &nbsp&nbsp
+                          Validator To Use
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <select class="form-control">
+                            <option value="1">D3 Physician Friendly</option>
+                            <option value="2">Clincial Analytics</option>
+                            <option value="3">HLI - Wolters Kluwer</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px ">
+                          &nbsp&nbsp
+                          Source Credibility
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <select class="form-control">
+                            <option value="1">Limit to my trusted relationships</option>
+                            <option value="2">Only Sources with High Network Trust</option>
+                            <option value="2">Not Limited</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px ">
+                          &nbsp&nbsp
+                          Value of Data Asset (USD)
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                            <input type="text" name="assetValue" placeholder="Current Market value $20" size="25">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px ">
+                          &nbsp&nbsp
+                          Expiration Date (Month/Day/Year)
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px; ">
+                          <div class="col-lg-5">
+                              <div class="input-group">
+                                  <input class="form-control"  type="text" data-mask="99/99/9999">
+
+                              </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr style="background-color:#F0F8FF;">
+                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
+                          &nbsp&nbsp
+                          Data Quality
+                          &nbsp&nbsp
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px ">
+                          &nbsp&nbsp
+                          Timeliness (less than)
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <select class="form-control">
+                            <option value="1">One Day (24 hours)</option>
+                            <option value="2">Week</option>
+                            <option value="3">30 days</option>
+                            <option value="4">60 days</option>
+                            <option value="5">90 days</option>
+                            <option value="6">6 Months</option>
+                            <option value="7">12 Months</option>
+                            <option value="8">24 Months</option>
+                            <option value="9">5 Years</option>
+                            <option value="10">10 Years</option>
+                            <option value="11">Not Applicable</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          &nbsp&nbsp
+                          Completeness (e.g. Required Fields)
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <input class="make-switch" type="checkbox" data-label-text="Completeness" checked enabled><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          &nbsp&nbsp
+                          Consistency (e.g. Sig Codes, Drug Names, )
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <input class="make-switch" type="checkbox" data-label-text="Consistency" checked enabled><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          &nbsp&nbsp
+                          Accuracy Guaranteed by Source (Incorrect data) )
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <input class="make-switch" type="checkbox" data-label-text="Accuracy" checked enabled><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          &nbsp&nbsp
+                          Validity Guaranteed by Source (i.e. uncalibrated device)
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <input class="make-switch" type="checkbox" data-label-text="Validity" checked enabled><br>
+                        </td>
+                      </tr>
+                      <tr style="background-color:#F0F8FF;">
+                        <td colspan="2" style="text-align: center; font-size:large; padding: 5px ">
+                          &nbsp&nbsp
+                          Patient Consent
+                          &nbsp&nbsp
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          &nbsp&nbsp
+                          Patient Consent To Share
+                          &nbsp&nbsp
+                        </td>
+                        <td style="padding: 5px ">
+                          <input class="make-switch" type="checkbox" data-label-text="Consent" checked disabled><br>
+                        </td>
+                      </tr>
                   </table
-
-
-
 
                   </div>
               </div><!-- /.Date Of Birth -->
@@ -430,12 +615,12 @@
 <!--END General FIELD-->
 
 <!--BEGIN Allergies FIELDS-->
-<div class="row">
-<div class="col-lg-6">
+<div class="row" style="padding: 8px;">
+<div >
     <div class="box dark">
         <header>
             <div class="icons"><i class="fa fa-edit"></i></div>
-            <h5>Manage Access</h5>
+            <h5>Manage Patient Consent</h5>
             <!-- .toolbar -->
             <div class="toolbar">
               <nav style="padding: 8px;">
@@ -453,7 +638,7 @@
         </header>
         <div id="div-1" class="body">
             <form class="form-horizontal">
-                Manage who has access
+
             </form>  <!-- /.Allergies -->
         </div>
     </div>
@@ -462,12 +647,12 @@
 <!--END Allergies FIELD-->
 
 <!--BEGIN Medications FIELDS-->
-<div class="row">
-<div class="col-lg-6">
+<div class="row" style="padding: 8px;">
+<div>
     <div class="box dark">
         <header>
             <div class="icons"><i class="fa fa-edit"></i></div>
-            <h5>View History</h5>
+            <h5>Manage Contracts</h5>
             <!-- .toolbar -->
             <div class="toolbar">
               <nav style="padding: 8px;">
@@ -485,7 +670,7 @@
         </header>
         <div id="div-1" class="body">
             <form class="form-horizontal">
-                History here
+
             </form>  <!-- /.Allergies -->
         </div>
     </div>
@@ -644,71 +829,6 @@
               alert( "Handler for .submit() called." );
               event.preventDefault();
             });
-            // $(document).ready(function() {
-            //       //set initial state.
-            //
-            //       $('#generalGetSlider').click(function(e) {
-            //           // this.checked =  $(this).is(":checked") && !!confirm("Are you sure?");
-            //           // $('#textbox1').val(this.checked);
-            //           // return true;
-            //           alert("Checked");
-            //       });
-            //   });
-              // $(document).ready(function () {
-              //
-              //      $('input[id="generalGetSlider"]').click(function () {
-              //
-              //        if ($(this).prop('checked')) {
-              //           // do what you need here
-              //           alert("Checked");
-              //        }
-              //        else {
-              //           // do what you need here
-              //           alert("Unchecked");
-              //        }
-              //      });
-              //
-              //  });
-                // $(function(){
-                //     $('#generalGetSlider').on('click', function() {
-                //        alert('yesss!!!!');
-                //     });
-                // });
-                // $( "#generalGetSlider" ).click(function() {
-                //   alert('yesss!!!!');
-                // });
-                // $('.make-switch').on('change', function(){ // on change of state
-                //    if(this.checked) // if changed state is "CHECKED"
-                //     {
-                //         // do the magic here
-                //         alert('yesss!!!!');
-                //     }
-                // })
-                // $(document).ready(function () {
-                //     $(document).ready(function () {
-                //         $(document).on('change', 'input[Id="#generalGetSlider"]', function (e) {
-                //             alert("YESS");
-                //
-                //         });
-                //
-                //     });
-                // });
-                // $(".checkbox").change(function() {
-                //     if(this.checked) {
-                //         alert('yesss!!!!');
-                //     }
-                // });
-                // $(document).ready(function() {
-                //     //set initial state.
-                //     $('#generalGetSlider').change(function() {
-                //       alert('yesss!!!!');
-                //         // if($(this).is(":checked")) {
-                //         //     var returnVal = confirm("Are you sure?");
-                //         //     $(this).attr("checked", returnVal);
-                //         // }
-                //         // $('#textbox1').val($(this).is(':checked'));
-                //     });
-                // })(jQuery);
             </script>
             <script src="assets/js/style-switcher.js"></script>
         </body>
