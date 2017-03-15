@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EPIC FHIR Integration</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="./app.js"></script>
+  <script>
+  var resultset;
+  var contractdata;
+  function searchByName(lName, fName) {
+
+  }
+  function getContract(contractId) {
+    //Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB
+    //$.getJSON('https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Condition?patient=' + patientId, 
+    //  function(data) {
+        //$('#results').innerText = data;
+        contractdata = {
+          patient_id: "Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB",
+          required_format: "FHIR",
+          target: [
+            { condition: { 
+              name: "Zika virus disease",
+              id: "T-HzNQh62IyOLOuPFOaTtDgB"
+            } }
+          ],
+          timeliness: { time_unit: "year", time_value: 1 },
+          status: ['confirmed']
+        };
+        console.log(contractdata);
+
+        //var outText = JSON.stringify(contractdata);
+        var outText = "";
+        outText += "<b>patient_id: </b>" + contractdata.patient_id + "<br />";
+        outText += "<b>required_format: </b>" + contractdata.required_format + "<br />";
+        outText += "<b>timeliness: </b>" + contractdata.timeliness.time_value + " " + contractdata.timeliness.time_unit + "(s)" + "<br />";
+        outText += "<b>target: </b>";
+        outText += "<ul>";
+        for (var i=0; i<contractdata.target.length; i++) {
+          outText += "<li><b>Condition: </b>" + contractdata.target[0].condition.name + "</li>";  
+        } 
+        outText += "</ul>";
+        $("div.contractDetails").html(outText);
+    //});
+  }
+
+  function searchById(patientId) {
+    //Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB
+    $.getJSON('https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Condition?patient=' + patientId, 
+      function(data) {
+        //$('#results').innerText = data;
+        console.log(data);
+        resultset = data;
+        
+        var outText = "<table border=1>"
+        outText += "<tr><th>Condition</th><th>Onset Date</th><th>Status</th><th>Asserter</th><th>Format</th></tr>"
+        for (var i=0; i<resultset.entry.length; i++) {
+          outText += "<tr>"
+          outText += "<td>" + resultset.entry[i].resource.code.text + "</td>";
+          outText += "<td>" + resultset.entry[i].resource.onsetDateTime + "</td>";
+          outText += "<td>" + resultset.entry[i].resource.verificationStatus + "</td>";
+          outText += "<td>" + resultset.entry[i].resource.asserter.display + "</td>";
+          outText += "<td>FHIR</td>";
+          outText += "</tr>"
+        }
+        outText += "</table>"
+
+        /*
+        var outText = "";
+        outText += "Patient found!<br/>"
+        outText += "Patient found!<br/>"
+        */
+        $("div.outputResults").html(outText);
+    });
+  }
+  </script>
+</head>
+<body>
+  <h1>EPIC FHIR Integration</h1>
+  <br />
+
+  <label for="contractId">Contract Id</label><br />
+  <input type="text" id="contractId" /><br />
+  <button id="btnSearchContract" onclick="getContract(contractId)">Search</button>
+  <div id="results" class="contractDetails">
+  </div>
+
+  <br />
+
+  <label for="patientId">Patient Id</label><br />
+  <input type="text" id="patientId" /><br />
+  <button id="btnSearchById" onclick="searchById(patientId.value)">Search</button>
+  <div id="results" class="outputResults">
+  </div>
+  <span id="balance"></span>
+</body>
+</html>

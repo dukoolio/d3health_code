@@ -799,12 +799,12 @@ module.exports = function(window, options) {
                         return;
                     }
                     if (webInfo.local) {
-                        less.logger.info("Loading " + sheet.href + " from cache.");
+                        //less.logger.info("Loading " + sheet.href + " from cache.");
                     } else {
-                        less.logger.info("Rendered " + sheet.href + " successfully.");
+                        //less.logger.info("Rendered " + sheet.href + " successfully.");
                     }
                     browser.createCSS(window.document, css, sheet);
-                    less.logger.info("CSS for " + sheet.href + " generated in " + (new Date() - endTime) + 'ms');
+                    //less.logger.info("CSS for " + sheet.href + " generated in " + (new Date() - endTime) + 'ms');
 
                     // Count completed sheet
                     remainingSheets--;
@@ -812,7 +812,7 @@ module.exports = function(window, options) {
                     // Check if the last remaining sheet was processed and then call the promise
                     if (remainingSheets === 0) {
                         totalMilliseconds = new Date() - startTime;
-                        less.logger.info("Less has finished. CSS generated in " + totalMilliseconds + 'ms');
+                        //less.logger.info("Less has finished. CSS generated in " + totalMilliseconds + 'ms');
                         resolve({
                             startTime: startTime,
                             endTime: endTime,
