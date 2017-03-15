@@ -67,7 +67,7 @@ window.App = {
       balance_element.innerHTML = value.valueOf();
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error getting balance; see log.");
+      self.setStatus("<font color=\"red\">Error getting balance; see log.</font>");
     });
   },
 
@@ -77,18 +77,18 @@ window.App = {
     var amount = parseInt(document.getElementById("amount").value);
     var receiver = document.getElementById("receiver").value;
 
-    this.setStatus("Initiating transaction... (please wait)");
+    this.setStatus("<font color=\"red\">Initiating transaction... (please wait)</font>");
 
     var meta;
     MetaCoin.deployed().then(function(instance) {
       meta = instance;
       return meta.sendCoin(receiver, amount, {from: account});
     }).then(function() {
-      self.setStatus("Transaction complete!");
+      self.setStatus("<font color=\"red\">Transaction complete!</font>");
       self.refreshBalance();
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error sending coin; see log.");
+      self.setStatus("<font color=\"red\">Error sending coin; see log.</font>");
     });
   },
   d3HealthContract: function() {
@@ -100,18 +100,18 @@ window.App = {
     //var amount = parseInt(document.getElementById("amount").value);
     //var receiver = document.getElementById("receiver").value;
 
-    this.setStatus("Initiating transaction... (please wait)");
+    this.setStatus("<font color=\"red\">Initiating transaction... (please wait)</font>");
 
     var meta;
     MetaCoin.deployed().then(function(instance) {
       meta = instance;
       return meta.sendCoin(receiver, amount, {from: account});
     }).then(function() {
-      self.setStatus("Transaction complete!");
+      self.setStatus("<font color=\"red\">Transaction complete!</font>");
       self.refreshBalance();
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error sending coin; see log.");
+      self.setStatus("<font color=\"red\">Error sending coin; see log.</font>");
     });
   },
   setGeneralInfo:function(blnGenInfo){
@@ -126,7 +126,7 @@ window.App = {
       console.log('setGeneralInfo Complete!');
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error in setGeneralInfo; see log.");
+      self.setStatus("<font color=\"red\">Error in setGeneralInfo; see log.</font>");
     });
   },
 
@@ -143,7 +143,7 @@ window.App = {
       console.log('getGeneralInfo Complete!');
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error in getGeneralInfo; see log.");
+      self.setStatus("<font color=\"red\">Error in getGeneralInfo; see log.</font>");
     });
   }
 
