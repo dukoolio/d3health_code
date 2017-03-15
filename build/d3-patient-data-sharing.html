@@ -69,6 +69,11 @@
     <!-- Truffle -->
     <script src="./app.js"></script>
 
+    <style>
+    .green-icon {
+      color: green;
+    }
+    </style>
 </head>
   </head>
 
@@ -317,7 +322,7 @@
                         </td>
                         <td style="padding: 5px ">
                           <select class="form-control">
-                            <option value="fe428454-0921-11e7-93ae-92361f002671">Michael Bluth</option>
+                            <option value="fe428454-0921-11e7-93ae-92361f002671">Jason Argonaut</option>
                             <option value="fe4287d8-0921-12e7-93ae-92361f002671">Barry Zuckerkorn</option>
                             <option value="fe4287ae-0921-13e7-93ae-92361f002671">Lucille Austero </option>
                             <option value="fe428b5c-0921-14e7-93ae-92361f002671">Ann Veal </option>
@@ -606,7 +611,10 @@
 
                 <!-- /.form-group -->
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Update</button>
-                <span id="status"></span>
+                <br/>
+                <div style="text-align:center">
+                <span id="status" style="font-color:red; font-size:large;"></span>
+                </div>
             </form>  <!-- /.General -->
         </div>
     </div>
@@ -639,6 +647,58 @@
         <div id="div-1" class="body">
             <form class="form-horizontal">
 
+              <div id="sortableTable" class="body collapse in">
+                <table class="table table-bordered sortableTable responsive-table">
+                  <thead>
+                    <tr>
+                      <th>#
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Patient
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Consent
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Date
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Type
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Method
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>&nbsp;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Jason Argonaut</td>
+                      <td>&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td>January 21st, 2015</td>
+                      <td>Share With Clinicians</td>
+                      <td>Written</td>
+                      <td>
+                        <button type="button" class="btn btn-sm btn-warning">Revoke</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Lucille Austero</td>
+                      <td><button type="button" class="btn btn-sm btn-primary">Get Consent</button></td>
+                      <td>May 4th, 2012</td>
+                      <td>None</td>
+                      <td>Phone</td>
+                      <td>
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
             </form>  <!-- /.Allergies -->
         </div>
     </div>
@@ -670,13 +730,74 @@
         </header>
         <div id="div-1" class="body">
             <form class="form-horizontal">
+              <div id="sortableTable" class="body collapse in">
+                <table class="table table-bordered sortableTable responsive-table">
+                  <thead>
+                    <tr>
+                      <th>#
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Patient
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Data Type
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Consent
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Timeliness
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Format
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Quality
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>Value
+                        <i class="fa sort"></i>
+                      </th>
+                      <th>&nbsp;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Ann Veal</td>
+                      <td>Observations&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td>Yes&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td>1 year&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td>FHIR&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td><i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td>$58.62</td>
+                      <td>
+                        <button type="button" class="btn btn-sm btn-warning">Remove</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Steve Holt</td>
+                      <td>Medication&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td>Yes&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td><button type="button" class="btn btn-sm btn-primary">Request Update</button></td>
+                      <td>HL7&nbsp;<i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td><i class="glyphicon glyphicon-ok green-icon"></i></td>
+                      <td>$33.44</td>
+                      <td>
+                        <button type="button" class="btn btn-sm btn-warning" disabled="">On Hold</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-            </form>  <!-- /.Allergies -->
+              </div>
+            </form> 
         </div>
     </div>
 </div>
 </div>
-<!--END Medications FIELD-->
+
 
 
 <!--END DATA SHARING FIELD-->

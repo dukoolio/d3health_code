@@ -75,7 +75,7 @@
       var dataToShare = "";
 
       function approveSharing(row, share_data, value) {
-        var r = 
+        var r =
           confirm("You are about to share:\n\n" + dataToShare +
             "\n\n" +
             "You will receive " + value + " for this transaction.");
@@ -85,7 +85,7 @@
       }
       function getContract(contractId) {
         //Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB
-        //$.getJSON('https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Condition?patient=' + patientId, 
+        //$.getJSON('https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Condition?patient=' + patientId,
         //  function(data) {
             //$('#results').innerText = data;
             console.log("Acquiring Blockchain Contract Data");
@@ -94,9 +94,9 @@
               patient_id: "Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB",
               required_format: "FHIR",
               target: ['condition'],
-              timeliness: { 
-                time_unit: "year", 
-                time_value: 1 
+              timeliness: {
+                time_unit: "year",
+                time_value: 1
               },
               status: ['confirmed']
             };
@@ -112,8 +112,8 @@
             outText += "<b>target: </b>";
             outText += "<ul>";
             for (var i=0; i<contractdata.target.length; i++) {
-              outText += "<li><b>Condition: </b>" + contractdata.target[0].condition.name + "</li>";  
-            } 
+              outText += "<li><b>Condition: </b>" + contractdata.target[0].condition.name + "</li>";
+            }
             outText += "</ul>";
             $("div.contractDetails").html(outText);
             */
@@ -123,7 +123,7 @@
         //Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB
         console.log("Fetching data from EPIC FHIR API");
         console.log("\thttps://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Condition?patient=" + patientId);
-        $.getJSON('https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Condition?patient=' + patientId, 
+        $.getJSON('https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Condition?patient=' + patientId,
           function(data) {
             //$('#results').innerText = data;
             //console.log(data);
@@ -237,8 +237,8 @@
                             </div>
                             <div class="user-wrapper bg-dark">
                                 <a class="user-link" href="">
-                                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/patient.jpg">
-                                    <span class="label label-danger user-label">16</span>
+                                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/barryZ.png">
+
                                 </a>
 
                                 <div class="media-body">
@@ -387,7 +387,7 @@
 
 
 <!--BEGIN General FIELDS-->
-<div class="row">
+<div class="row" style="padding: 8px;">
 <div >
     <div class="box dark">
         <header>
@@ -406,7 +406,7 @@
                       <i class="fa fa-times"></i>
                   </a>
               </nav>
-            </div>            <!-- /.toolbar -->            
+            </div>            <!-- /.toolbar -->
         </header>
         <div id="div-1" class="body">
 
@@ -429,19 +429,19 @@
                           </th>
                           <th>Consent
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>Timeliness
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>Format
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>Quality
                             <i class="fa sort"></i>
                           </th>
                           <th>Value
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>&nbsp;</th>
                         </tr>
                       </thead>
@@ -472,7 +472,7 @@
 </div>
 <!--END General FIELD-->
 
-<div class="row">
+<div class="row" style="padding: 8px;">
 <div >
     <div class="box dark">
         <header>
@@ -491,7 +491,7 @@
                       <i class="fa fa-times"></i>
                   </a>
               </nav>
-            </div>            <!-- /.toolbar -->            
+            </div>            <!-- /.toolbar -->
         </header>
         <div id="div-1" class="body">
 
@@ -514,19 +514,19 @@
                           </th>
                           <th>Consent
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>Timeliness
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>Format
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>Quality
                             <i class="fa sort"></i>
-                          </th>                          
+                          </th>
                           <th>Value
                             <i class="fa sort"></i>
-                          </th>                             
+                          </th>
                           <th>&nbsp;</th>
                         </tr>
                       </thead>
@@ -556,7 +556,7 @@
                           <td>
                             <button type="button" class="btn btn-sm btn-warning">Ignore</button>
                           </td>
-                        </tr>                        
+                        </tr>
                       </tbody>
                     </table>
                   </div>
