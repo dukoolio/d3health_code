@@ -22,6 +22,7 @@ var d3Coin = contract(d3Coin_artifacts);
 // For application bootstrapping, check out window.addEventListener below.
 var accounts;
 var account;
+var account1;
 
 window.App = {
   start: function() {
@@ -124,6 +125,7 @@ window.App = {
     }).then(function() {
       self.setStatus("<font color=\"red\">Transaction complete!</font>");
       self.refreshBalance();
+      self.refreshBalance1();
     }).catch(function(e) {
       console.log(e);
       self.setStatus("<font color=\"red\">Error sending coin; see log.</font>");
