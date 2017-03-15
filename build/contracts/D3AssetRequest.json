@@ -1,0 +1,87 @@
+{
+  "contract_name": "D3AssetRequest",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "bool"
+        }
+      ],
+      "name": "setGeneralInfo",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "bool"
+        }
+      ],
+      "name": "setAllergies",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllergies",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getGeneralInfo",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "bool"
+        }
+      ],
+      "name": "setMedications",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMedications",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x606060405234610000575b610197806100196000396000f3006060604052361561005c5763ffffffff60e060020a60003504166335d82d1681146100615780635a40bb8f146100755780638b1928a514610089578063a34bbf51146100aa578063cd6e8855146100cb578063d38f3b68146100df575b610000565b34610000576100736004351515610100565b005b34610000576100736004351515610112565b005b3461000057610096610129565b604080519115158252519081900360200190f35b3461000057610096610138565b604080519115158252519081900360200190f35b34610000576100736004351515610142565b005b346100005761009661015b565b604080519115158252519081900360200190f35b6000805460ff19168215151790555b50565b6000805461ff001916610100831515021790555b50565b600054610100900460ff165b90565b60005460ff165b90565b6000805462ff0000191662010000831515021790555b50565b60005462010000900460ff165b905600a165627a7a72305820ba258bf211eae160b390f3ad2681df87a21900b1c7778874c5d47b58a3b4ed550029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1489554268471
+}

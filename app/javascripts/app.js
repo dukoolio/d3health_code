@@ -7,9 +7,15 @@ import { default as contract } from 'truffle-contract'
 
 // Import our contract artifacts and turn them into usable abstractions.
 import metacoin_artifacts from '../../build/contracts/MetaCoin.json'
+import d3Asset_artifacts from '../../build/contracts/D3AssetRequest.json'
+import d3Coin_artifacts from '../../build/contracts/D3Coin.json'
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 var MetaCoin = contract(metacoin_artifacts);
+
+//D3 Abstraction
+var d3Asset = contract(d3Asset_artifacts);
+var d3Coin = contract(d3Coin_artifacts);
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -23,6 +29,7 @@ window.App = {
 
     // Bootstrap the MetaCoin abstraction for Use.
     MetaCoin.setProvider(web3.currentProvider);
+    d3Asset.setProvider(web3.currentProvider);
 
     // Get the initial account balance so it can be displayed.
     web3.eth.getAccounts(function(err, accs) {
@@ -83,7 +90,63 @@ window.App = {
       console.log(e);
       self.setStatus("Error sending coin; see log.");
     });
+  },
+  d3HealthContract: function() {
+    var self = this;
+
+    var amount = localStorage.getItem('valueOfDataAsset');
+    var receiver = localStorage.getItem('specialistAddress');
+
+    //var amount = parseInt(document.getElementById("amount").value);
+    //var receiver = document.getElementById("receiver").value;
+
+    this.setStatus("Initiating transaction... (please wait)");
+
+    var meta;
+    MetaCoin.deployed().then(function(instance) {
+      meta = instance;
+      return meta.sendCoin(receiver, amount, {from: account});
+    }).then(function() {
+      self.setStatus("Transaction complete!");
+      self.refreshBalance();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error sending coin; see log.");
+    });
+  },
+  setGeneralInfo:function(blnGenInfo){
+    var self = this;
+    console.log('setting generalInto');
+    var d3a;
+
+    d3Asset.deployed().then(function(instance){
+      d3a=instance;
+      return d3a.setGeneralInfo(blnGenInfo);
+    }).then(function() {
+      console.log('setGeneralInfo Complete!');
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error in setGeneralInfo; see log.");
+    });
+  },
+
+  getGeneralInfo:function(){
+    var self = this;
+    console.log('getting generalInto');
+
+    var d3a;
+
+    d3Asset.deployed().then(function(instance){
+      d3a=instance;
+      return d3a.getGeneralInfo();
+    }).then(function() {
+      console.log('getGeneralInfo Complete!');
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error in getGeneralInfo; see log.");
+    });
   }
+
 };
 
 window.addEventListener('load', function() {
