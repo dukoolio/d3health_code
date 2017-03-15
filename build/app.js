@@ -36066,6 +36066,7 @@ var d3Coin = __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default()(__WEBPACK_
 // For application bootstrapping, check out window.addEventListener below.
 var accounts;
 var account;
+var account1;
 
 window.App = {
   start: function() {
@@ -36089,6 +36090,7 @@ window.App = {
 
       accounts = accs;
       account = accounts[0];
+			account1 = accounts[1];
 
       self.refreshBalance();
     });
@@ -36115,6 +36117,22 @@ window.App = {
     });
   },
 
+	refreshBalance1: function() {
+		var self = this;
+
+		var meta;
+		MetaCoin.deployed().then(function(instance) {
+			meta = instance;
+			return meta.getBalance.call(account1, {from: account1});
+		}).then(function(value) {
+			var balance_element1 = document.getElementById("balance1");
+			balance_element1.innerHTML = value.valueOf();
+		}).catch(function(e) {
+			console.log(e);
+			self.setStatus("<font color=\"red\">Error getting balance; see log.</font>");
+		});
+	},
+
   sendCoin: function() {
     var self = this;
 
@@ -36139,7 +36157,7 @@ window.App = {
     var self = this;
 
     var amount = localStorage.getItem('valueOfDataAsset');
-    var receiver = localStorage.getItem('specialistAddress');
+    var receiver = account1;
 
     //var amount = parseInt(document.getElementById("amount").value);
     //var receiver = document.getElementById("receiver").value;
@@ -36153,6 +36171,7 @@ window.App = {
     }).then(function() {
       self.setStatus("<font color=\"red\">Transaction complete!</font>");
       self.refreshBalance();
+			self.refreshBalance1();
     }).catch(function(e) {
       console.log(e);
       self.setStatus("<font color=\"red\">Error sending coin; see log.</font>");

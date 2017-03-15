@@ -70,6 +70,21 @@ window.App = {
       self.setStatus("<font color=\"red\">Error getting balance; see log.</font>");
     });
   },
+  refreshBalance1: function() {
+    var self = this;
+
+    var meta;
+    MetaCoin.deployed().then(function(instance) {
+      meta = instance;
+      return meta.getBalance.call(account1, {from: account1});
+    }).then(function(value) {
+      var balance_element1 = document.getElementById("balance1");
+      balance_element1.innerHTML = value.valueOf();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("<font color=\"red\">Error getting balance; see log.</font>");
+    });
+  },
 
   sendCoin: function() {
     var self = this;

@@ -249,7 +249,9 @@
                                         </li>
                                         <li>
                                           <h5 id="balance-top-right" class="media-heading"></h5>
-                                          <h5>Balance <span ><span style="color: white" id="balance"></span> D3C</span></h5>
+                                          <h5>Balance $<span ><span style="color: white" id="balance1"></span> USD </span></h5>
+                                          <h5> <span ><span style="color: white" id="balance" hidden="true"></span> </span></h5>
+
                                         </li>
                                     </ul>
                                 </div>
@@ -711,9 +713,11 @@
                var vUser = localStorage.getItem("username");
                var username_element = document.getElementById("username-top-right");
                username_element.innerHTML = "Hello "+vUser.valueOf();
-               //console.log("Username:"+vUser);
 
-               //console.log("OnLoad Complete!")
+               console.log("Getting Balance1");
+               App.refreshBalance1();
+                console.log("Completed Getting Balance1");
+
                getContract("47dfdf2a-74d9-467a-8a16-c342d2583a22");
                searchById('Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB');
 
