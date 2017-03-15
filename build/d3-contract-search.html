@@ -78,9 +78,17 @@
         var r =
           confirm("You are about to share:\n\n" + dataToShare +
             "\n\n" +
-            "You will receive " + value + " for this transaction.");
+            "You will receive $" + value + " for this transaction.");
         if (r) {
+          localStorage.setItem('reverseTransaction', 1)
+          localStorage.setItem('valueOfDataAsset', value);
+          
+          console.log("Sharing confirmed, fulfilling contract.");
+
+          var transId = App.d3HealthContract();
           document.getElementById("d3sharingTable").deleteRow(row);
+
+          console.log("\t$" + value + " received.");
         }
       }
       function getContract(contractId) {
@@ -222,7 +230,7 @@
                             <div class="main-bar">
                                 <h3>
               <i class="fa fa-pencil"></i>&nbsp;
-            Patient View
+            Physician View
           </h3>
                             </div>
                             <!-- /.main-bar -->
@@ -249,7 +257,7 @@
                                         </li>
                                         <li>
                                           <h5 id="balance-top-right" class="media-heading"></h5>
-                                          <h5>Balance <span ><span style="color: white" id="balance"></span> D3C</span></h5>
+                                          <h5>Balance <span >$<span style="color: white" id="balance"></span> USD</span></h5>
                                         </li>
                                     </ul>
                                 </div>
@@ -456,7 +464,7 @@
                           <td><i class="glyphicon glyphicon-ok green-icon"></i></td>
                           <td>$121.61</td>
                           <td>
-                            <button type="button" class="btn btn-sm btn-success" onclick="approveSharing(1,'','$121.61')">Approve</button>
+                            <button type="button" class="btn btn-sm btn-success" onclick="approveSharing(1,'',121.61)">Approve</button>
                             <button type="button" class="btn btn-sm btn-warning">Deny</button>
                           </td>
                         </tr>
