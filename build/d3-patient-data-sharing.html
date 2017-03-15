@@ -606,7 +606,7 @@
 
                 <!-- /.form-group -->
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Update</button>
-
+                <span id="status"></span>
             </form>  <!-- /.General -->
         </div>
     </div>
@@ -818,7 +818,10 @@
                var vUser = localStorage.getItem("username");
                var username_element = document.getElementById("username-top-right");
                username_element.innerHTML = "Hello "+vUser.valueOf();
-               console.log("Username:"+vUser);
+               console.log("Username:"+vUser + " Authenticated");
+
+                var vProviderAddress = localStorage.getItem("ProviderAddress");
+                 console.log('Blockchain Address for '+name+' Set to'+ vProviderAddress);
 
                console.log("OnLoad Complete!")
 
@@ -826,7 +829,9 @@
            };
 
             $( "#get-my-data-form" ).submit(function( event ) {
-              alert( "Handler for .submit() called." );
+              //alert( "Handler for .submit() called." );
+              App.d3HealthContract();
+//onclick="App.sendCoin()"
               event.preventDefault();
             });
             </script>

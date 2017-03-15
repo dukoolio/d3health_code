@@ -90,31 +90,9 @@ Handle Sign in Functionality
     <!--Bootstrap -->
     <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
 
-    <!-- Truffle BC integration -->
-    <script type="text/javascript">
+    <!-- D3 Health integration -->
+    <!-- <script src="assets/js/d3Health.js"></script> -->
 
-          (function($) {
-            $(document).ready(function() {
-              console.log('test1');
-              "use strict";
-              Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylesheets_app_css__ = __webpack_require__(54);
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylesheets_app_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__stylesheets_app_css__);
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3__ = __webpack_require__(40);
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_web3__);
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_truffle_contract__ = __webpack_require__(55);
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_truffle_contract__);
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json__ = __webpack_require__(53);
-              /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json__);
-
-              // MetaCoin is our usable abstraction, which we'll use through the code below.
-              var MetaCoin = __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default()(__WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json___default.a);
-              console.log('test2');
-              var MetaCoin = MetaCoin.deployed();
-              console.log(MetaCoin.deployed());
-            });
-        })(jQuery);
-    </script>
     <!-- D3 Login -->
     <script type="text/javascript">
 
@@ -138,26 +116,21 @@ Handle Sign in Functionality
           //
           //Add Username via Session Key
           var name = document.getElementById('loginName').value;
-
-
-          //TODO AUthenticate via D3 Services
-          //var pwd = document.getElementById('loginName');
-
+          var pwd = document.getElementById('loginPwd').value;
+          //login(name,pwd);
           //Handle Provider Flow
-          if(name!=null && name.length){
-            alert('Hello: ' + name);
-            localStorage.setItem("username", name);
+          if(name!=null && name.length>0){
+            //VerifyAccount and
+            //Look up Addresses via D3 API
+            localStorage.setItem('ProviderAddress', '0x7b85c50f068dd33564e85e3379bedfacfc76df4a');
+            localStorage.setItem('ConsumerAddress', '0xc9816790b0fc121b43c6a650faaaef62b298874e');
+
+
             window.location.replace("d3-patient-data-sharing.html");
           }
           else{
             alert('no name entered');
           }
-          //Handle EHR Flow
-
-          //Handle Payer-Healthplan flow
-
-          // You must return false to prevent the default form behavior
-          //return false;
         }
 
         var form = document.getElementById('login-form');
